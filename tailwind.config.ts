@@ -34,6 +34,30 @@ const config: Config = {
             serif: ['var(--font-playfair-display)', 'Georgia', 'serif'],
             sans: ['var(--font-quicksand)', 'Arial', 'sans-serif'],
          },
+         animation: {
+            slideIn:
+               'slideIn 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
+            slideOut:
+               'slideOut 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
+         },
+         keyframes: {
+            slideIn: {
+               '0%': {
+                  transform: 'translateX(-16rem)',
+               },
+               '100%': {
+                  transform: 'translateX(0)',
+               },
+            },
+            slideOut: {
+               '0%': {
+                  transform: 'translateX(0)',
+               },
+               '100%': {
+                  transform: 'translateX(-16rem)',
+               },
+            },
+         },
       },
    },
    plugins: [],
