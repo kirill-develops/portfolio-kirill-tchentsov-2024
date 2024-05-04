@@ -29,7 +29,7 @@ function MainFrame({ children }: ReactChildProps) {
 
    return (
       <div
-         className={`${animationClass} -z-10 flex snap-y snap-mandatory flex-col sm:basis-3/4 sm:animate-slideIn`}
+         className={`${animationClass} z-0 flex snap-y snap-mandatory flex-col sm:basis-3/4 sm:animate-slideIn`}
       >
          {children}
       </div>
@@ -39,7 +39,7 @@ function MainFrame({ children }: ReactChildProps) {
 function SectionFrame({ children, id }: ReactChildProps) {
    return (
       <section
-         className="flex min-h-screen snap-start snap-always flex-col gap-y-16 px-4 py-20 md:px-8"
+         className="flex min-h-screen snap-center snap-always flex-col gap-y-16 px-4 py-20 md:px-8"
          id={id}
       >
          {children}

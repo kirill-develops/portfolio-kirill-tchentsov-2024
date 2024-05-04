@@ -19,7 +19,7 @@ function MenuLines({ toggleDrawer }: ToggleDrawerProps): JSX.Element {
          viewBox="0 0 24 24"
          strokeWidth={1.5}
          stroke="currentColor"
-         className="absolute left-4 top-4 h-6 w-6 cursor-pointer sm:hidden"
+         className="absolute left-4 top-4 z-10 h-6 w-6 cursor-pointer sm:hidden"
          onClick={toggleDrawer}
       >
          <path
@@ -49,7 +49,7 @@ function Wrapper({ children, open }: WrapperProps): JSX.Element {
 
    return (
       <aside
-         className={`${center} fixed top-0 z-10 min-h-screen min-w-56 gap-y-10 bg-drawer py-12 sm:sticky sm:animate-slideIn ${showDrawer}`}
+         className={`${center} fixed top-0 z-20 min-h-screen min-w-56 gap-y-10 bg-drawer py-12 sm:sticky sm:animate-slideIn ${showDrawer}`}
       >
          {children}
       </aside>
@@ -79,7 +79,7 @@ function Overlay({ open, toggleDrawer }: OverlayProps): JSX.Element {
    const showOverlay = open ? `block` : 'hidden';
    return (
       <div
-         className={`fixed inset-0 z-0 h-screen overflow-auto bg-black/15 ${showOverlay}`}
+         className={`fixed inset-0 z-10 h-screen overflow-auto bg-black/15 ${showOverlay}`}
          onClick={toggleDrawer}
       />
    );
