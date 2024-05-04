@@ -1,4 +1,5 @@
 import { ReactChildProps } from '@/app/lib/genericTypes';
+import { useEffect, useState } from 'react';
 
 type OpenProps = {
    open: boolean;
@@ -37,7 +38,14 @@ function Container({ children }: ReactChildProps): JSX.Element {
 interface WrapperProps extends ReactChildProps, OpenProps {}
 
 function Wrapper({ children, open }: WrapperProps): JSX.Element {
-   const showDrawer = open ? 'animate-slideIn' : ' animate-slideOut';
+   const [showDrawer, setShowDrawer] = useState(
+      open ? 'animate-slideIn' : 'animate-slideOutInit',
+   );
+
+   useEffect(
+      () => setShowDrawer(open ? 'animate-slideIn' : 'animate-slideOut'),
+      [open],
+   );
 
    return (
       <aside

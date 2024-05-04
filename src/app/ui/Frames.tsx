@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import { ReactChildProps } from '../lib/genericTypes';
 
 function PageFrame({ children }: ReactChildProps) {
@@ -16,12 +19,29 @@ function PageFrame({ children }: ReactChildProps) {
 }
 
 function MainFrame({ children }: ReactChildProps) {
-   return <div className="flex flex-col py-24 sm:basis-3/4">{children}</div>;
+   const [animationClass, setAnimationClass] = useState(
+      'animate-slideOutContainerInit',
+   );
+
+   useEffect(() => {
+      setAnimationClass('animate-slideOutContainer');
+   }, []);
+
+   return (
+      <div
+         className={`${animationClass} -z-10 flex snap-y snap-mandatory flex-col sm:basis-3/4 sm:animate-slideIn`}
+      >
+         {children}
+      </div>
+   );
 }
 
-function SectionFrame({ children }: ReactChildProps) {
+function SectionFrame({ children, id }: ReactChildProps) {
    return (
-      <section className="flex flex-col gap-y-16 px-4 py-20 md:px-8">
+      <section
+         className="flex min-h-screen snap-start snap-always flex-col gap-y-16 px-4 py-20 md:px-8"
+         id={id}
+      >
          {children}
       </section>
    );

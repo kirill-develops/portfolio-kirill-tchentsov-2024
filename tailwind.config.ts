@@ -39,6 +39,12 @@ const config: Config = {
                'slideIn 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
             slideOut:
                'slideOut 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
+            slideOutContainer:
+               'slideOutContainer 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
+            slideOutInit:
+               'slideOut 0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
+            slideOutContainerInit:
+               'slideOutContainer 0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
          },
          keyframes: {
             slideIn: {
@@ -55,6 +61,14 @@ const config: Config = {
                },
                '100%': {
                   transform: 'translateX(-16rem)',
+               },
+            },
+            slideOutContainer: {
+               '0%': {
+                  transform: 'translateX(16rem)',
+               },
+               '100%': {
+                  transform: 'translateX(0)',
                },
             },
          },
