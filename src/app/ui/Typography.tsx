@@ -4,11 +4,11 @@ interface ReactChildProps {
 type ExtendedReactChildProps<T> = ReactChildProps & T;
 
 interface BlackProps {
-   black: boolean;
+   black?: boolean;
 }
 
 interface SelectedProps {
-   selected: boolean;
+   selected?: boolean;
 }
 
 type BodyProps = ExtendedReactChildProps<BlackProps>;
@@ -22,9 +22,17 @@ function PageTitle({ children }: ReactChildProps) {
    );
 }
 
+function PageSubtitle({ children }: ReactChildProps) {
+   return (
+      <h2 className="font-sans text-xs/[1.8] font-medium uppercase tracking-[0.0625rem] text-font">
+         {children}
+      </h2>
+   );
+}
+
 function SectionHeading({ children }: ReactChildProps) {
    return (
-      <h2 className="text-font-heading font-sans font-medium uppercase tracking-[0.3125rem] text-[0.625]">
+      <h2 className="font-sans font-medium uppercase tracking-[0.3125rem] text-[0.625] text-font-heading">
          {children}
       </h2>
    );
@@ -70,7 +78,7 @@ function DrawerHeading({ children }: ReactChildProps) {
 
 function DrawerSubheading({ children }: ReactChildProps) {
    return (
-      <h3 className="text-font font-sans text-xs/[1.8] uppercase">
+      <h3 className="font-sans text-xs/[1.8] uppercase text-font">
          {children}
       </h3>
    );
@@ -83,7 +91,7 @@ function DrawerListItem({ children, selected = false }: DrawerListItemProps) {
 
    return (
       <li
-         className={`text-font font-sans text-xs/[1.8] font-medium uppercase tracking-[0.0625rem] ${hasUnderline}`}
+         className={`font-sans text-xs/[1.8] font-medium uppercase tracking-[0.0625rem] text-font ${hasUnderline}`}
       >
          {children}
       </li>
@@ -92,7 +100,7 @@ function DrawerListItem({ children, selected = false }: DrawerListItemProps) {
 
 function DrawerCopyright({ children }: ReactChildProps) {
    return (
-      <h6 className="text-font-placeholder font-sans text-[0.796875rem] leading-[1.8]">
+      <h6 className="font-sans text-[0.796875rem] leading-[1.8] text-font-placeholder">
          {children}
       </h6>
    );
@@ -108,6 +116,7 @@ function CardHeading({ children }: ReactChildProps) {
 
 export {
    PageTitle,
+   PageSubtitle,
    SectionHeading,
    SectionSubheading,
    Body,
