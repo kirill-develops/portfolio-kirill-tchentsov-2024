@@ -10,10 +10,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: ReactChildProps) {
    return (
-      <html
-         lang="en"
-         className="scroll-smooth"
-      >
+      <html lang="en">
          <body
             className={`${playfair_display.variable} ${quicksand.variable} antialiased`}
          >

@@ -29,7 +29,7 @@ function MainFrame({ children }: ReactChildProps) {
 
    return (
       <div
-         className={`${animationClass} z-0 flex snap-y snap-mandatory flex-col sm:basis-3/4 sm:animate-slideIn`}
+         className={`${animationClass} z-0 flex h-screen snap-y snap-mandatory flex-col overflow-scroll scroll-smooth sm:basis-3/4 sm:animate-slideIn`}
       >
          {children}
       </div>
