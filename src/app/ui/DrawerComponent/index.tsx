@@ -17,9 +17,11 @@ import {
 import useDrawer from '@/app/ui/DrawerComponent/useDrawer';
 import Link from 'next/link';
 import pageSections from '@/app/lib/pageSections';
+import useHash from './useHash';
 
 export default function Drawer(): Promise<JSX.Element> {
    const [open, toggleOpen, toggleClose] = useDrawer();
+   const hash = useHash();
 
    return (
       <>
