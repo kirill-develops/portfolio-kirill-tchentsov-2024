@@ -1,5 +1,5 @@
 const pageSections = [
-   { title: 'Home', url: '/#top' },
+   { title: 'Home', url: '/#hero' },
    { title: 'About', url: '/#about' },
    { title: 'Services', url: '/#services' },
    { title: 'Skills', url: '/#skills' },
