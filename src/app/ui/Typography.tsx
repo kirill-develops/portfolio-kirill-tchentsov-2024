@@ -87,7 +87,7 @@ function DrawerListItem({
 
    return (
       <li
-         className={`font-sans text-xs/[1.8] font-medium uppercase tracking-[0.0625rem] text-font ${hasUnderline}`}
+         className={`font-sans text-xs/[1.8] font-medium uppercase tracking-[0.0625rem] text-font hover:text-page-blue ${hasUnderline}`}
       >
          {children}
       </li>
