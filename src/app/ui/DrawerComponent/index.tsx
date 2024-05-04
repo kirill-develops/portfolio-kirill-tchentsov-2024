@@ -15,6 +15,7 @@ import {
    Overlay,
 } from '@/app/ui/DrawerComponent/elements';
 import useDrawer from '@/app/ui/DrawerComponent/useDrawer';
+import Link from 'next/link';
 
 function Drawer(): JSX.Element {
    const [open, toggleOpen, toggleClose] = useDrawer();
@@ -29,12 +30,24 @@ function Drawer(): JSX.Element {
                   <Drawer.Subheading>Full-Stack Developer</Drawer.Subheading>
                </Center>
                <Drawer.List toggleDrawer={toggleClose}>
+                  <Link href="/#top">
                      <Drawer.ListItem>Home</Drawer.ListItem>
+                  </Link>
+                  <Link href="/#about">
                      <Drawer.ListItem>About</Drawer.ListItem>
+                  </Link>
+                  <Link href="/#services">
                      <Drawer.ListItem>Services</Drawer.ListItem>
+                  </Link>
+                  <Link href="/#skills">
                      <Drawer.ListItem>Skills</Drawer.ListItem>
+                  </Link>
+                  <Link href="/#work">
                      <Drawer.ListItem>Work</Drawer.ListItem>
+                  </Link>
+                  <Link href="/#contact">
                      <Drawer.ListItem>Contact</Drawer.ListItem>
+                  </Link>
                </Drawer.List>
                <Center>
                   <Drawer.Copyright>
