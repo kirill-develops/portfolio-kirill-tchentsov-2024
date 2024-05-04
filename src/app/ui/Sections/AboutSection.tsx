@@ -15,8 +15,8 @@ export default function AboutSection() {
          <Body>
             <BodyOpener>Hi I&apos;m Kirill Tchentsov </BodyOpener>I am a web
             developer specializing in
-            <Body black>JavaScript</Body>,<Body black>React</Body>React
-            (including <Body black>Context API</Body>, building{' '}
+            <Body black>JavaScript</Body>, <Body black>React</Body> (including{' '}
+            <Body black>Context API</Body>, building{' '}
             <Body black>custom hooks</Body> and <Body black>Redux</Body> for
             state management), <Body black>Next.js</Body>,{' '}
             <Body black>Node.js</Body> and <Body black>API construction</Body>{' '}
