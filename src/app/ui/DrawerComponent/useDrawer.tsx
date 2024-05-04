@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-function stopScroll(open) {
+function stopScroll(open: boolean) {
    if (open) {
       document.body.style.overflow = 'hidden';
    } else {
@@ -9,14 +9,17 @@ function stopScroll(open) {
    return () => (document.body.style.overflow = 'initial');
 }
 
-export default function useDrawer() {
+type ToggleOpen = () => void;
+type UseDrawer = [boolean, ToggleOpen];
+
+export default function useDrawer(): UseDrawer {
    const [open, setOpen] = useState(false);
 
-   const toggleOpen = () => setOpen((open) => !open);
+   const toggleOpen: ToggleOpen = () => setOpen((prevOpen) => !prevOpen);
 
    useEffect(() => {
       stopScroll(open);
-   });
+   }, [open]);
 
-   return [open, toggleOpen];
+   return [open, toggleOpen] as const;
 }

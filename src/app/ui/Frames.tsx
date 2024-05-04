@@ -1,6 +1,4 @@
-type ReactChildProps = {
-   readonly children: React.ReactNode;
-};
+import { ReactChildProps } from '../lib/genericTypes';
 
 function PageFrame({ children }: ReactChildProps) {
    return (

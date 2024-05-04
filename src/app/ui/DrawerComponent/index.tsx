@@ -16,7 +16,7 @@ import {
 } from '@/app/ui/DrawerComponent/elements';
 import useDrawer from '@/app/ui/DrawerComponent/useDrawer';
 
-function Drawer() {
+function Drawer(): JSX.Element {
    const [open, toggleOpen] = useDrawer();
 
    return (

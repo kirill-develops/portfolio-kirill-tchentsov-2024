@@ -1,6 +1,16 @@
+import { ReactChildProps } from '@/app/lib/genericTypes';
+
+type OpenProps = {
+   open: boolean;
+};
+
+type ToggleOpenProps = {
+   toggleOpen: () => void;
+};
+
 const center = 'flex flex-col items-center';
 
-function MenuLines({ toggleOpen }) {
+function MenuLines({ toggleOpen }: ToggleOpenProps): JSX.Element {
    return (
       <svg
          xmlns="http://www.w3.org/2000/svg"
@@ -20,11 +30,13 @@ function MenuLines({ toggleOpen }) {
    );
 }
 
-function Container({ children }) {
+function Container({ children }: ReactChildProps): JSX.Element {
    return <div className={`h-auto flex-1 sm:basis-1/4`}>{children}</div>;
 }
 
-function Wrapper({ children, open }) {
+interface WrapperProps extends ReactChildProps, OpenProps {}
+
+function Wrapper({ children, open }: WrapperProps): JSX.Element {
    const showDrawer = open ? 'animate-slideIn' : ' animate-slideOut';
 
    return (
@@ -36,17 +48,19 @@ function Wrapper({ children, open }) {
    );
 }
 
-function Center({ children }) {
+function Center({ children }: ReactChildProps): JSX.Element {
    return <div className={`${center}`}>{children}</div>;
 }
 
-function List({ children }) {
+function List({ children }: ReactChildProps): JSX.Element {
    return (
       <ul className="flex list-image-none flex-col items-center">{children}</ul>
    );
 }
 
-function Overlay({ open, toggleOpen }) {
+interface OverlayProps extends OpenProps, ToggleOpenProps {}
+
+function Overlay({ open, toggleOpen }: OverlayProps): JSX.Element {
    const showOverlay = open ? `block` : 'hidden';
    return (
       <div
