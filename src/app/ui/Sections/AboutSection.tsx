@@ -7,7 +7,7 @@ import {
 } from '@/app/ui/Typography';
 export default function AboutSection() {
    return (
-      <SectionFrame>
+      <SectionFrame id="about">
          <HeadingsFrame>
             <SectionHeading>About</SectionHeading>
             <SectionSubheading>Who am I?</SectionSubheading>
