@@ -16,8 +16,9 @@ import {
 } from '@/app/ui/DrawerComponent/elements';
 import useDrawer from '@/app/ui/DrawerComponent/useDrawer';
 import Link from 'next/link';
+import pageSections from '@/app/lib/pageSections';
 
-function Drawer(): JSX.Element {
+export default function Drawer(): Promise<JSX.Element> {
    const [open, toggleOpen, toggleClose] = useDrawer();
 
    return (
@@ -30,24 +31,18 @@ function Drawer(): JSX.Element {
                   <Drawer.Subheading>Full-Stack Developer</Drawer.Subheading>
                </Center>
                <Drawer.List toggleDrawer={toggleClose}>
-                  <Link href="/#top">
-                     <Drawer.ListItem>Home</Drawer.ListItem>
-                  </Link>
-                  <Link href="/#about">
-                     <Drawer.ListItem>About</Drawer.ListItem>
-                  </Link>
-                  <Link href="/#services">
-                     <Drawer.ListItem>Services</Drawer.ListItem>
-                  </Link>
-                  <Link href="/#skills">
-                     <Drawer.ListItem>Skills</Drawer.ListItem>
-                  </Link>
-                  <Link href="/#work">
-                     <Drawer.ListItem>Work</Drawer.ListItem>
-                  </Link>
-                  <Link href="/#contact">
-                     <Drawer.ListItem>Contact</Drawer.ListItem>
-                  </Link>
+                  {pageSections.map(({ title, url }) => {
+                     const selected = hash === url.substring(1);
+
+                     return (
+                        <Drawer.ListItem
+                           key={url}
+                           selected={selected}
+                        >
+                           <Link href={url}>{title}</Link>
+                        </Drawer.ListItem>
+                     );
+                  })}
                </Drawer.List>
                <Center>
                   <Drawer.Copyright>
@@ -71,5 +66,3 @@ Drawer.Heading = DrawerHeading;
 Drawer.Subheading = DrawerSubheading;
 Drawer.ListItem = DrawerListItem;
 Drawer.Copyright = DrawerCopyright;
-
-export default Drawer;
