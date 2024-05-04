@@ -1,15 +1,15 @@
-interface ReactChildProps {
+type ReactChildProps = {
    readonly children: React.ReactNode;
-}
+};
 type ExtendedReactChildProps<T> = ReactChildProps & T;
 
-interface BlackProps {
+type BlackProps = {
    black?: boolean;
-}
+};
 
-interface SelectedProps {
+type SelectedProps = {
    selected?: boolean;
-}
+};
 
 type BodyProps = ExtendedReactChildProps<BlackProps>;
 type DrawerListItemProps = ExtendedReactChildProps<SelectedProps>;
