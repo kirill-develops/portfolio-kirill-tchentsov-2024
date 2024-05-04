@@ -1,4 +1,8 @@
-function PageFrame({ children }) {
+type ReactChildProps = {
+   readonly children: React.ReactNode;
+};
+
+function PageFrame({ children }: ReactChildProps) {
    return (
       <main
          className="relative mx-auto
@@ -13,11 +17,11 @@ function PageFrame({ children }) {
    );
 }
 
-function MainFrame({ children }) {
+function MainFrame({ children }: ReactChildProps) {
    return <div className="flex flex-col py-24 sm:basis-3/4">{children}</div>;
 }
 
-function SectionFrame({ children }) {
+function SectionFrame({ children }: ReactChildProps) {
    return (
       <section className="flex flex-col gap-y-16 px-4 py-20 md:px-8">
          {children}
@@ -25,7 +29,7 @@ function SectionFrame({ children }) {
    );
 }
 
-function HeadingsFrame({ children }) {
+function HeadingsFrame({ children }: ReactChildProps) {
    return <div className="flex flex-col gap-y-7">{children}</div>;
 }
 
