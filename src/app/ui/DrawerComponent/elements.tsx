@@ -4,13 +4,13 @@ type OpenProps = {
    open: boolean;
 };
 
-type ToggleOpenProps = {
-   toggleOpen: () => void;
+type ToggleDrawerProps = {
+   toggleDrawer: () => void;
 };
 
 const center = 'flex flex-col items-center';
 
-function MenuLines({ toggleOpen }: ToggleOpenProps): JSX.Element {
+function MenuLines({ toggleDrawer }: ToggleDrawerProps): JSX.Element {
    return (
       <svg
          xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +19,7 @@ function MenuLines({ toggleOpen }: ToggleOpenProps): JSX.Element {
          strokeWidth={1.5}
          stroke="currentColor"
          className="absolute left-4 top-4 h-6 w-6 cursor-pointer sm:hidden"
-         onClick={toggleOpen}
+         onClick={toggleDrawer}
       >
          <path
             strokeLinecap="round"
@@ -31,7 +31,7 @@ function MenuLines({ toggleOpen }: ToggleOpenProps): JSX.Element {
 }
 
 function Container({ children }: ReactChildProps): JSX.Element {
-   return <div className={`h-auto flex-1 sm:basis-1/4`}>{children}</div>;
+   return <div className="h-auto flex-1 sm:basis-1/4">{children}</div>;
 }
 
 interface WrapperProps extends ReactChildProps, OpenProps {}
@@ -52,20 +52,27 @@ function Center({ children }: ReactChildProps): JSX.Element {
    return <div className={`${center}`}>{children}</div>;
 }
 
-function List({ children }: ReactChildProps): JSX.Element {
+interface ListProps extends ReactChildProps, ToggleDrawerProps {}
+
+function List({ children, toggleDrawer }: ListProps): JSX.Element {
    return (
-      <ul className="flex list-image-none flex-col items-center">{children}</ul>
+      <ul
+         onClick={toggleDrawer}
+         className="flex list-image-none flex-col items-center"
+      >
+         {children}
+      </ul>
    );
 }
 
-interface OverlayProps extends OpenProps, ToggleOpenProps {}
+interface OverlayProps extends OpenProps, ToggleDrawerProps {}
 
-function Overlay({ open, toggleOpen }: OverlayProps): JSX.Element {
+function Overlay({ open, toggleDrawer }: OverlayProps): JSX.Element {
    const showOverlay = open ? `block` : 'hidden';
    return (
       <div
          className={`fixed inset-0 z-0 h-screen overflow-auto bg-black/15 ${showOverlay}`}
-         onClick={toggleOpen}
+         onClick={toggleDrawer}
       />
    );
 }

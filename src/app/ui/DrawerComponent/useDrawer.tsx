@@ -9,17 +9,18 @@ function stopScroll(open: boolean) {
    return () => (document.body.style.overflow = 'initial');
 }
 
-type ToggleOpen = () => void;
-type UseDrawer = [boolean, ToggleOpen];
+type ToggleDrawer = () => void;
+type UseDrawer = [boolean, ToggleDrawer, ToggleDrawer];
 
 export default function useDrawer(): UseDrawer {
    const [open, setOpen] = useState(false);
 
-   const toggleOpen: ToggleOpen = () => setOpen((prevOpen) => !prevOpen);
+   const toggleOpen: ToggleDrawer = () => setOpen(true);
+   const toggleClose: ToggleDrawer = () => setOpen(false);
 
    useEffect(() => {
       stopScroll(open);
    }, [open]);
 
-   return [open, toggleOpen] as const;
+   return [open, toggleOpen, toggleClose] as const;
 }

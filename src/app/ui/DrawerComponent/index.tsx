@@ -17,23 +17,24 @@ import {
 import useDrawer from '@/app/ui/DrawerComponent/useDrawer';
 
 function Drawer(): JSX.Element {
-   const [open, toggleOpen] = useDrawer();
+   const [open, toggleOpen, toggleClose] = useDrawer();
 
    return (
       <>
-         <MenuLines toggleOpen={toggleOpen} />
+         <MenuLines toggleDrawer={toggleOpen} />
          <Container>
             <Wrapper open={open}>
                <Center>
                   <Drawer.Heading>Kirill Tchentsov</Drawer.Heading>
                   <Drawer.Subheading>Full-Stack Developer</Drawer.Subheading>
                </Center>
-               <Drawer.List>
-                  <Drawer.ListItem>Home</Drawer.ListItem>
-                  <Drawer.ListItem>About</Drawer.ListItem>
-                  <Drawer.ListItem>Stack</Drawer.ListItem>
-                  <Drawer.ListItem>Work</Drawer.ListItem>
-                  <Drawer.ListItem>Contact</Drawer.ListItem>
+               <Drawer.List toggleDrawer={toggleClose}>
+                     <Drawer.ListItem>Home</Drawer.ListItem>
+                     <Drawer.ListItem>About</Drawer.ListItem>
+                     <Drawer.ListItem>Services</Drawer.ListItem>
+                     <Drawer.ListItem>Skills</Drawer.ListItem>
+                     <Drawer.ListItem>Work</Drawer.ListItem>
+                     <Drawer.ListItem>Contact</Drawer.ListItem>
                </Drawer.List>
                <Center>
                   <Drawer.Copyright>
@@ -46,7 +47,7 @@ function Drawer(): JSX.Element {
          </Container>
          <Overlay
             open={open}
-            toggleOpen={toggleOpen}
+            toggleDrawer={toggleClose}
          />
       </>
    );
