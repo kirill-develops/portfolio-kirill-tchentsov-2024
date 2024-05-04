@@ -17,6 +17,7 @@ export default function Home(): JSX.Element {
       <PageFrame>
          <Drawer />
          <MainFrame>
+            <HeroBanner />
             <AboutSection />
             <SectionFrame id="services">
                <HeadingsFrame>
