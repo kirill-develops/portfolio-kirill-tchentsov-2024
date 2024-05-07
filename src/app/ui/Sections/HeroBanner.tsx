@@ -40,9 +40,9 @@ export default function HeroBanner(): JSX.Element {
    return (
       <SectionFrame
          id="hero"
-         className="gap-y-7"
+         className="snap-center items-center gap-y-7 sm:items-start"
       >
-         <div className="flex flex-col gap-y-2">
+         <div className="flex flex-col items-center gap-y-2 sm:items-start">
             <PageTitle>Full-Stack Developer</PageTitle>
             <PageSubtitle>
                [JavaScript | React.js | Next.js | Node.js | AWS ]
