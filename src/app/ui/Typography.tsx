@@ -10,9 +10,9 @@ function PageTitle({ children }: ReactChildProps): JSX.Element {
 
 function PageSubtitle({ children }: ReactChildProps): JSX.Element {
    return (
-      <h2 className="font-sans text-xs/[1.8] font-medium uppercase tracking-[0.0625rem] text-font">
+      <h1 className="font-sans text-xs/[1.8] font-medium uppercase tracking-[0.0625rem] text-font">
          {children}
-      </h2>
+      </h1>
    );
 }
 
@@ -26,9 +26,9 @@ function SectionHeading({ children }: ReactChildProps): JSX.Element {
 
 function SectionSubheading({ children }: ReactChildProps): JSX.Element {
    return (
-      <h3 className="font-serif text-lg font-bold uppercase tracking-[0.3125rem]">
+      <h2 className="font-serif text-lg font-bold uppercase tracking-[0.3125rem]">
          {children}
-      </h3>
+      </h2>
    );
 }
 
@@ -104,9 +104,9 @@ function DrawerCopyright({ children }: ReactChildProps): JSX.Element {
 
 function CardHeading({ children }: ReactChildProps): JSX.Element {
    return (
-      <h4 className="font-sans text-base/[1.1] font-bold uppercase">
+      <h3 className="font-sans text-base/[1.1] font-bold uppercase">
          {children}
-      </h4>
+      </h3>
    );
 }
 
