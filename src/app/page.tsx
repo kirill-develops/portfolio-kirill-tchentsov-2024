@@ -5,10 +5,7 @@ import {
    HeadingsFrame,
 } from '@/app/ui/Frames';
 import Drawer from '@/app/ui/DrawerComponent';
-import {
-   SectionHeading,
-   SectionSubheading,
-} from '@/app/ui/Typography';
+import { SectionHeading, SectionSubheading } from '@/app/ui/Typography';
 import AboutSection from './ui/Sections/AboutSection';
 import HeroBanner from './ui/Sections/HeroBanner';
 
