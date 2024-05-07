@@ -23,6 +23,8 @@ export default function Drawer(): JSX.Element {
    const [open, toggleOpen, toggleClose] = useDrawer();
    const hash = useHash();
 
+   const currentYear = new Date().getFullYear();
+
    return (
       <>
          <MenuLines toggleDrawer={toggleOpen} />
@@ -48,7 +50,7 @@ export default function Drawer(): JSX.Element {
                </Drawer.List>
                <Center>
                   <Drawer.Copyright>
-                     © Copyright {} All rights reserved
+                     © Copyright {currentYear} All rights reserved
                   </Drawer.Copyright>
                   <Drawer.Copyright>Made with Next.js</Drawer.Copyright>
                   <Drawer.Copyright>Deployed on AWS</Drawer.Copyright>

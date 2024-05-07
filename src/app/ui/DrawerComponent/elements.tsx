@@ -49,7 +49,7 @@ function Wrapper({ children, open }: WrapperProps): JSX.Element {
 
    return (
       <aside
-         className={`${center} fixed top-0 z-20 min-h-screen min-w-56 gap-y-10 bg-drawer py-12 sm:sticky sm:animate-slideIn ${showDrawer}`}
+         className={`${center} fixed top-0 z-20 min-h-screen min-w-56 gap-y-10 bg-drawer px-4 py-12 sm:sticky sm:animate-slideIn ${showDrawer}`}
       >
          {children}
       </aside>

@@ -96,7 +96,7 @@ function DrawerListItem({
 
 function DrawerCopyright({ children }: ReactChildProps): JSX.Element {
    return (
-      <h6 className="font-sans text-[0.796875rem] leading-[1.8] text-font-placeholder">
+      <h6 className="text-center font-sans text-[0.796875rem] leading-[1.8] text-font-placeholder">
          {children}
       </h6>
    );
