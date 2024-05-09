@@ -8,6 +8,7 @@ import Drawer from '@/app/ui/DrawerComponent';
 import { SectionHeading, SectionSubheading } from '@/app/ui/Typography';
 import AboutSection from './ui/Sections/AboutSection';
 import HeroBanner from './ui/Sections/HeroBanner';
+import ServicesSection from './ui/Sections/ServicesSection';
 
 export default function Home(): JSX.Element {
    return (
@@ -16,12 +17,7 @@ export default function Home(): JSX.Element {
          <MainFrame>
             <HeroBanner />
             <AboutSection />
-            <SectionFrame id="services">
-               <HeadingsFrame>
-                  <SectionHeading>What I do?</SectionHeading>
-                  <SectionSubheading>Services</SectionSubheading>
-               </HeadingsFrame>
-            </SectionFrame>
+            <ServicesSection />
             <SectionFrame id="skills">
                <HeadingsFrame>
                   <SectionHeading>My Specialty</SectionHeading>
