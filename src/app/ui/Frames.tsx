@@ -29,7 +29,7 @@ function MainFrame({ children }: ReactChildProps) {
 
    return (
       <div
-         className={`${animationClass} z-0 flex h-screen snap-y snap-proximity flex-col overflow-scroll scroll-smooth sm:basis-3/4 sm:animate-slideIn`}
+         className={`${animationClass} z-0 flex h-screen flex-col overflow-scroll scroll-smooth sm:basis-3/4 sm:animate-slideIn`}
       >
          {children}
       </div>
@@ -43,7 +43,7 @@ interface SectionFrameProps extends ReactChildProps {
 function SectionFrame({ children, id, className }: SectionFrameProps) {
    return (
       <article
-         className={`flex min-h-screen snap-start snap-always flex-col gap-y-16 px-4 py-20 md:px-8 ${className}`}
+         className={`flex h-auto flex-col gap-y-16 px-4 py-20 md:px-8 ${className}`}
          id={id}
       >
          {children}
