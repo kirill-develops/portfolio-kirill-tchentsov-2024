@@ -1,4 +1,4 @@
-const borderColorsArr = [
+export const borderColorsArr = [
    'border-page-blue',
    'border-page-orange',
    'border-page-yellow',
@@ -8,4 +8,12 @@ const borderColorsArr = [
    'border-page-red',
 ];
 
-export default borderColorsArr;
+export const bgColorsArr = [
+   'bg-page-blue',
+   'bg-page-orange',
+   'bg-page-yellow',
+   'bg-page-purple',
+   'bg-page-teal',
+   'bg-page-navy',
+   'bg-page-red',
+];
