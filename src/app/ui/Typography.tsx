@@ -104,7 +104,7 @@ function DrawerCopyright({ children }: ReactChildProps): JSX.Element {
 
 function CardHeading({ children }: ReactChildProps): JSX.Element {
    return (
-      <h3 className="font-sans text-base/[1.1] font-bold uppercase">
+      <h3 className="text-center font-sans text-base/[1.1] font-bold uppercase">
          {children}
       </h3>
    );
