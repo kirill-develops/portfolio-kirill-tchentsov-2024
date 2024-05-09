@@ -13,11 +13,13 @@ import {
    Center,
    List,
    Overlay,
+   MenuIconButton,
 } from '@/app/ui/DrawerComponent/elements';
 import useDrawer from '@/app/ui/DrawerComponent/useDrawer';
 import Link from 'next/link';
 import pageSections from '@/app/lib/pageSections';
 import useHash from './useHash';
+import MenuLines from '../svg/menuLines';
 
 export default function Drawer(): JSX.Element {
    const [open, toggleOpen, toggleClose] = useDrawer();
@@ -27,7 +29,9 @@ export default function Drawer(): JSX.Element {
 
    return (
       <>
-         <MenuLines toggleDrawer={toggleOpen} />
+         <MenuIconButton toggleDrawer={toggleOpen}>
+            <MenuLines />
+         </MenuIconButton>
          <Container>
             <Wrapper open={open}>
                <Center>
