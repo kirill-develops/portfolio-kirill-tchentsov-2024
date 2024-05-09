@@ -30,6 +30,7 @@ const config: Config = {
                red: '#CC403F',
             },
          },
+         boxShadow: { card: '0 8px 56px -8px rgba(0, 0, 0, 0.17)' },
          fontFamily: {
             serif: ['var(--font-playfair-display)', 'Georgia', 'serif'],
             sans: ['var(--font-quicksand)', 'Arial', 'sans-serif'],
