@@ -34,12 +34,14 @@ function SectionSubheading({ children }: ReactChildProps): JSX.Element {
 
 interface BodyProps extends ReactChildProps {
    black?: boolean;
+   justify?: string;
 }
 
-function Body({ children, black = false }: BodyProps): JSX.Element {
+function Body({ children, black = false, justify }: BodyProps): JSX.Element {
    const bodyStyles = 'font-sans text-base/[1.8] md:text-[0.9375rem]';
+   const alignStyles = justify ?? 'text-justify';
    const colorStyles = black ? 'text-black' : 'text-font';
-   const dynamicBodyStyles = `${bodyStyles} ${colorStyles}`;
+   const dynamicBodyStyles = `${bodyStyles} ${colorStyles} ${alignStyles}`;
 
    return black ? (
       <span className={`${dynamicBodyStyles}`}>{children}</span>
