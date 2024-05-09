@@ -43,7 +43,7 @@ interface SectionFrameProps extends ReactChildProps {
 function SectionFrame({ children, id, className }: SectionFrameProps) {
    return (
       <article
-         className={`flex h-auto flex-col gap-y-16 px-4 py-20 md:px-8 ${className}`}
+         className={`flex h-auto flex-col gap-y-16 px-4 py-20 sm:px-8 lg:px-12 ${className}`}
          id={id}
       >
          {children}
