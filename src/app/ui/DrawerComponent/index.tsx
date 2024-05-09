@@ -7,7 +7,6 @@ import {
    DrawerCopyright,
 } from '@/app/ui/Typography';
 import {
-   MenuLines,
    Container,
    Wrapper,
    Center,
@@ -21,9 +20,25 @@ import pageSections from '@/app/lib/pageSections';
 import useHash from './useHash';
 import MenuLines from '../svg/menuLines';
 
+function ListItems(): JSX.Element[] {
+   const hash = useHash();
+
+   return pageSections.map(({ title, url }) => {
+      const selected = hash === url.substring(1);
+
+      return (
+         <Drawer.ListItem
+            key={url}
+            selected={selected}
+         >
+            <Link href={url}>{title}</Link>
+         </Drawer.ListItem>
+      );
+   });
+}
+
 export default function Drawer(): JSX.Element {
    const [open, toggleOpen, toggleClose] = useDrawer();
-   const hash = useHash();
 
    const currentYear = new Date().getFullYear();
 
@@ -39,18 +54,7 @@ export default function Drawer(): JSX.Element {
                   <Drawer.Subheading>Full-Stack Developer</Drawer.Subheading>
                </Center>
                <Drawer.List toggleDrawer={toggleClose}>
-                  {pageSections.map(({ title, url }) => {
-                     const selected = hash === url.substring(1);
-
-                     return (
-                        <Drawer.ListItem
-                           key={url}
-                           selected={selected}
-                        >
-                           <Link href={url}>{title}</Link>
-                        </Drawer.ListItem>
-                     );
-                  })}
+                  <ListItems />
                </Drawer.List>
                <Center>
                   <Drawer.Copyright>
