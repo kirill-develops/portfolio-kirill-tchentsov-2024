@@ -1,7 +1,7 @@
 export default function GithubSVG(): JSX.Element {
    return (
       <svg
-         role="img"
+         aria-hidden="true"
          viewBox="0 0 24 24"
          xmlns="http://www.w3.org/2000/svg"
          className="h-10 w-10"

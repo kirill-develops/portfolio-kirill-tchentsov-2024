@@ -8,12 +8,14 @@ import DownloadSVG from '../svg/download';
 
 interface LinkProps extends ReactChildProps {
    url: string;
+   label?: string;
 }
 
-function IconLink({ children, url }: LinkProps): JSX.Element {
+function IconLink({ children, url, label }: LinkProps): JSX.Element {
    return (
       <Link
          href={url}
+         aria-label={label}
          className="cursor-pointer text-[#666666] hover:text-page-blue"
          target="_blank"
          rel="noopener"
@@ -53,10 +55,16 @@ export default function HeroBanner(): JSX.Element {
             <DownloadSVG />
          </ButtonLink>
          <div className="flex gap-x-6">
-            <IconLink url="https://www.linkedin.com/in/kirill-tchentsov/">
+            <IconLink
+               url="https://www.linkedin.com/in/kirill-tchentsov/"
+               label="Kirill's LinkedIn"
+            >
                <LinkedinSVG />
             </IconLink>
-            <IconLink url="https://github.com/kirill-develops">
+            <IconLink
+               url="https://github.com/kirill-develops"
+               label="Kirill's GitHub"
+            >
                <GithubSVG />
             </IconLink>
          </div>
