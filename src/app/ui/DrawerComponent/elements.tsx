@@ -40,11 +40,11 @@ export function Wrapper({ children, open }: WrapperProps): JSX.Element {
    const [showDrawer, setShowDrawer] = useState(
       open ? 'animate-slideIn' : 'animate-slideOutInit',
    );
+   const drawerAnimationState = open ? 'animate-slideIn' : 'animate-slideOut';
 
-   useEffect(
-      () => setShowDrawer(open ? 'animate-slideIn' : 'animate-slideOut'),
-      [open],
-   );
+   useEffect(() => {
+      setTimeout(setShowDrawer, 500, drawerAnimationState);
+   }, [open, drawerAnimationState]);
 
    return (
       <aside

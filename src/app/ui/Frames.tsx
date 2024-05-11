@@ -24,7 +24,7 @@ function MainFrame({ children }: ReactChildProps) {
    );
 
    useEffect(() => {
-      setAnimationClass('animate-slideOutContainer');
+      setTimeout(setAnimationClass, 500, 'animate-slideOutContainer');
    }, []);
 
    return (
