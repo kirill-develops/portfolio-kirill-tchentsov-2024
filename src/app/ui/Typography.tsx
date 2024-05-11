@@ -35,15 +35,21 @@ function SectionSubheading({ children }: ReactChildProps): JSX.Element {
 interface BodyProps extends ReactChildProps {
    black?: boolean;
    justify?: string;
+   span?: boolean;
 }
 
-function Body({ children, black = false, justify }: BodyProps): JSX.Element {
+function Body({
+   children,
+   black = false,
+   justify,
+   span,
+}: BodyProps): JSX.Element {
    const bodyStyles = 'font-sans text-base/[1.8] md:text-[0.9375rem]';
    const alignStyles = justify ?? 'text-justify';
    const colorStyles = black ? 'text-black' : 'text-font';
    const dynamicBodyStyles = `${bodyStyles} ${colorStyles} ${alignStyles}`;
 
-   return black ? (
+   return black || span ? (
       <span className={`${dynamicBodyStyles}`}>{children}</span>
    ) : (
       <p className={`${dynamicBodyStyles}`}>{children}</p>
@@ -104,7 +110,19 @@ function DrawerCopyright({ children }: ReactChildProps): JSX.Element {
    );
 }
 
-function CardHeading({ children }: ReactChildProps): JSX.Element {
+interface CardHeading extends ReactChildProps {
+   span?: boolean;
+}
+
+function CardHeading({ children, span }: CardHeading): JSX.Element {
+   if (span) {
+      return (
+         <span className="text-center font-sans text-base/[1.1] font-bold uppercase">
+            {children}
+         </span>
+      );
+   }
+
    return (
       <h3 className="text-center font-sans text-base/[1.1] font-bold uppercase">
          {children}
