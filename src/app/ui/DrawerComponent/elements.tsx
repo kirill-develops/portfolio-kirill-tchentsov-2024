@@ -1,5 +1,8 @@
 import { ReactChildProps } from '@/app/lib/genericTypes';
-import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import pageSections from '@/app/lib/pageSections';
+import useHash from './useHash';
+import { DrawerListItem } from '../Typography';
 
 type OpenProps = {
    open: boolean;
@@ -74,6 +77,23 @@ export function List({
          {children}
       </ul>
    );
+}
+
+export function ListItems(): JSX.Element[] {
+   const hash = useHash();
+
+   return pageSections.map(({ title, url }) => {
+      const selected = hash === url.substring(1);
+
+      return (
+         <DrawerListItem
+            key={url}
+            selected={selected}
+         >
+            <Link href={url}>{title}</Link>
+         </DrawerListItem>
+      );
+   });
 }
 
 interface OverlayProps extends OpenProps, ToggleDrawerProps {}

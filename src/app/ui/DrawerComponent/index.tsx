@@ -13,29 +13,10 @@ import {
    List,
    Overlay,
    MenuIconButton,
+   ListItems,
 } from '@/app/ui/DrawerComponent/elements';
 import useDrawer from '@/app/ui/DrawerComponent/useDrawer';
-import Link from 'next/link';
-import pageSections from '@/app/lib/pageSections';
-import useHash from './useHash';
 import MenuLines from '../svg/menuLines';
-
-function ListItems(): JSX.Element[] {
-   const hash = useHash();
-
-   return pageSections.map(({ title, url }) => {
-      const selected = hash === url.substring(1);
-
-      return (
-         <Drawer.ListItem
-            key={url}
-            selected={selected}
-         >
-            <Link href={url}>{title}</Link>
-         </Drawer.ListItem>
-      );
-   });
-}
 
 export default function Drawer(): JSX.Element {
    const [open, toggleOpen, toggleClose] = useDrawer();
