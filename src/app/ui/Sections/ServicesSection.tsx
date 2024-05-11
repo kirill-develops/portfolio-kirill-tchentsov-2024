@@ -7,10 +7,10 @@ import {
    SectionHeading,
    SectionSubheading,
 } from '@/app/ui/Typography';
-import MobileSVG from '../svg/mobile';
-import Newspaper from '../svg/newspaper';
-import Globe from '../svg/globe';
-import StyledPolygon from '../svg/hexagon';
+import MobileSVG from '@/svg/mobile';
+import Newspaper from '@/svg/newspaper';
+import Globe from '@/svg/globe';
+import StyledPolygon from '@/svg/hexagon';
 
 const serviceArr = [
    {
@@ -44,7 +44,7 @@ function ServiceCard({ serviceObj, index }: ServiceCardProps): JSX.Element {
 
    return (
       <section
-         className={`shadow-card relative flex flex-1 flex-col justify-between gap-y-5 border-b-2 bg-white p-5 pt-20 ${borderColorsArr[index]}`}
+         className={`relative flex flex-1 flex-col justify-between gap-y-5 border-b-2 bg-white p-5 pt-20 shadow-card ${borderColorsArr[index]}`}
       >
          <StyledPolygon index={index}>{icon}</StyledPolygon>
          <CardHeading>{title}</CardHeading>

@@ -16,7 +16,7 @@ import {
    ListItems,
 } from '@/app/ui/DrawerComponent/elements';
 import useDrawer from '@/app/ui/DrawerComponent/useDrawer';
-import MenuLines from '../svg/menuLines';
+import MenuLines from '@/svg/menuLines';
 
 export default function Drawer(): JSX.Element {
    const [open, toggleOpen, toggleClose] = useDrawer();

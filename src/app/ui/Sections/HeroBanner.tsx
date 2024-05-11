@@ -1,10 +1,10 @@
+import Link from 'next/link';
 import { SectionFrame } from '@/app/ui/Frames';
 import { PageTitle, PageSubtitle } from '@/app/ui/Typography';
-import GithubSVG from '../svg/github';
-import Link from 'next/link';
-import LinkedinSVG from '../svg/linkedin';
 import { ReactChildProps } from '@/app/lib/genericTypes';
-import DownloadSVG from '../svg/download';
+import GithubSVG from '@/svg/github';
+import LinkedinSVG from '@/svg/linkedin';
+import DownloadSVG from '@/svg/download';
 
 interface LinkProps extends ReactChildProps {
    url: string;

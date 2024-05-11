@@ -19,9 +19,10 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@/fonts":["./src/app/ui/fonts.ts"]
+      "@/fonts":["./src/app/ui/fonts.ts"],
+      "@/svg/*":["./src/app/ui/svg/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/lib/skillsArr.ts"],
   "exclude": ["node_modules"]
 }
