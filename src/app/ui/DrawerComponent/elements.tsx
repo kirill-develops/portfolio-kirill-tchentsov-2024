@@ -3,6 +3,7 @@ import Link from 'next/link';
 import pageSections from '@/app/lib/pageSections';
 import useHash from './useHash';
 import { DrawerListItem } from '../Typography';
+import { useEffect, useState } from 'react';
 
 type OpenProps = {
    open: boolean;
@@ -40,14 +41,27 @@ export function Container({ children }: ReactChildProps): JSX.Element {
 interface WrapperProps extends ReactChildProps, OpenProps {}
 
 export function Wrapper({ children, open }: WrapperProps): JSX.Element {
+   const [isLoaded, setIsLoaded] = useState(false);
    const [showDrawer, setShowDrawer] = useState(
       open ? 'animate-slideIn' : 'animate-slideOutInit',
    );
    const drawerAnimationState = open ? 'animate-slideIn' : 'animate-slideOut';
 
    useEffect(() => {
-      setTimeout(setShowDrawer, 500, drawerAnimationState);
-   }, [open, drawerAnimationState]);
+      let drawerTimer: NodeJS.Timeout;
+      if (isLoaded) {
+         setShowDrawer(drawerAnimationState);
+      } else {
+         drawerTimer = setTimeout(setShowDrawer, 500, drawerAnimationState);
+      }
+
+      const loadedTimer: NodeJS.Timeout = setTimeout(setIsLoaded, 1000, true);
+
+      return () => {
+         clearTimeout(drawerTimer);
+         clearTimeout(loadedTimer);
+      };
+   }, [open, drawerAnimationState, isLoaded]);
 
    return (
       <aside
