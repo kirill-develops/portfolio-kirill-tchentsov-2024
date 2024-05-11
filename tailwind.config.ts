@@ -2,6 +2,7 @@ import type { Config } from 'tailwindcss';
 import plugin from 'tailwindcss/plugin';
 
 const config: Config = {
+   darkMode: ['class'],
    content: [
       './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
       './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -37,6 +38,8 @@ const config: Config = {
             sans: ['var(--font-quicksand)', 'Arial', 'sans-serif'],
          },
          animation: {
+            'accordion-down': 'accordion-down 0.2s ease-out',
+            'accordion-up': 'accordion-up 0.2s ease-out',
             slideIn:
                'slideIn 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
             slideOut:
@@ -73,10 +76,19 @@ const config: Config = {
                   transform: 'translateX(0)',
                },
             },
+            'accordion-down': {
+               from: { height: '0' },
+               to: { height: 'var(--radix-accordion-content-height)' },
+            },
+            'accordion-up': {
+               from: { height: 'var(--radix-accordion-content-height)' },
+               to: { height: '0' },
+            },
          },
       },
    },
    plugins: [
+      require('tailwindcss-animate'),
       plugin(({ addUtilities }) => {
          addUtilities({
             '.hexagonClip': {
