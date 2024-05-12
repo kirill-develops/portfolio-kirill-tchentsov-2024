@@ -9,6 +9,7 @@ import { SectionHeading, SectionSubheading } from '@/app/ui/Typography';
 import AboutSection from './ui/Sections/AboutSection';
 import HeroBanner from './ui/Sections/HeroBanner';
 import ServicesSection from './ui/Sections/ServicesSection';
+import SkillsSection from './ui/Sections/SkillsSection';
 
 export default function Home(): JSX.Element {
    return (
@@ -18,12 +19,7 @@ export default function Home(): JSX.Element {
             <HeroBanner />
             <AboutSection />
             <ServicesSection />
-            <SectionFrame id="skills">
-               <HeadingsFrame>
-                  <SectionHeading>My Specialty</SectionHeading>
-                  <SectionSubheading>My Skills</SectionSubheading>
-               </HeadingsFrame>
-            </SectionFrame>
+            <SkillsSection />
             <SectionFrame id="work">
                <HeadingsFrame>
                   <SectionHeading>Experience</SectionHeading>
