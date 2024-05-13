@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { ReactChildProps } from '../lib/genericTypes';
+import { cn } from '../lib/utils';
 
 function PageFrame({ children }: ReactChildProps) {
    return (
@@ -43,7 +44,10 @@ interface SectionFrameProps extends ReactChildProps {
 function SectionFrame({ children, id, className }: SectionFrameProps) {
    return (
       <article
-         className={`flex h-auto flex-col gap-y-16 px-4 py-20 sm:px-8 lg:px-12 ${className}`}
+         className={cn(
+            'flex h-auto flex-col gap-y-16 px-4 py-20 sm:px-8 lg:px-12',
+            className,
+         )}
          id={id}
       >
          {children}
