@@ -10,6 +10,7 @@ import AboutSection from './ui/Sections/AboutSection';
 import HeroBanner from './ui/Sections/HeroBanner';
 import ServicesSection from './ui/Sections/ServicesSection';
 import SkillsSection from './ui/Sections/SkillsSection';
+import ContactSection from './ui/Sections/ContactSection';
 
 export default function Home(): JSX.Element {
    return (
@@ -26,12 +27,7 @@ export default function Home(): JSX.Element {
                   <SectionSubheading>My Work</SectionSubheading>
                </HeadingsFrame>
             </SectionFrame>
-            <SectionFrame id="contact">
-               <HeadingsFrame>
-                  <SectionHeading>Get in Touch</SectionHeading>
-                  <SectionSubheading>Contact</SectionSubheading>
-               </HeadingsFrame>
-            </SectionFrame>
+            <ContactSection />
          </MainFrame>
       </PageFrame>
    );
