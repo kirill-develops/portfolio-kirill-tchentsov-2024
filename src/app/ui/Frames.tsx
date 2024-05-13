@@ -10,7 +10,7 @@ function PageFrame({ children }: ReactChildProps) {
          className="relative mx-auto
          flex h-full
          min-h-screen
-         max-w-screen-lg flex-row
+         max-w-6xl flex-row
          justify-between
          "
       >
