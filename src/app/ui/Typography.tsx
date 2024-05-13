@@ -1,4 +1,5 @@
 import { ReactChildProps } from '../lib/genericTypes';
+import { cn } from '../lib/utils';
 
 function PageTitle({ children }: ReactChildProps): JSX.Element {
    return (
@@ -36,6 +37,7 @@ interface BodyProps extends ReactChildProps {
    black?: boolean;
    justify?: string;
    span?: boolean;
+   className?: string;
 }
 
 function Body({
@@ -43,6 +45,7 @@ function Body({
    black = false,
    justify,
    span,
+   className,
 }: BodyProps): JSX.Element {
    const bodyStyles = 'font-sans text-base/[1.8] md:text-[0.9375rem]';
    const alignStyles = justify ?? 'text-justify';
@@ -50,9 +53,9 @@ function Body({
    const dynamicBodyStyles = `${bodyStyles} ${colorStyles} ${alignStyles}`;
 
    return black || span ? (
-      <span className={`${dynamicBodyStyles}`}>{children}</span>
+      <span className={cn(dynamicBodyStyles, className)}>{children}</span>
    ) : (
-      <p className={`${dynamicBodyStyles}`}>{children}</p>
+      <p className={cn(dynamicBodyStyles, className)}>{children}</p>
    );
 }
 
