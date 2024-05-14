@@ -40,3 +40,20 @@ export function EmailLink(): JSX.Element {
       </Link>
    );
 }
+
+interface FormWrapperProps extends ReactChildProps {
+   onSubmit: (
+      e?: React.BaseSyntheticEvent<object, any, any> | undefined,
+   ) => Promise<void>;
+}
+
+export function FormWrapper({ children, onSubmit }: FormWrapperProps) {
+   return (
+      <form
+         className="flex flex-1 flex-col gap-y-5"
+         onSubmit={onSubmit}
+      >
+         {children}
+      </form>
+   );
+}
