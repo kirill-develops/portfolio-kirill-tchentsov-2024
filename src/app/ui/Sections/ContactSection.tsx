@@ -1,6 +1,7 @@
 import React from 'react';
 import { HeadingsFrame, SectionFrame } from '../Frames';
 import { Body, SectionHeading, SectionSubheading } from '../Typography';
+import ContactForm from '../FormComponent';
 import {
    Contact,
    ContactsWrapper,
@@ -17,13 +18,14 @@ export default function ContactSection(): JSX.Element {
    return (
       <SectionFrame
          id="contact"
-         className="min-h-full"
+         className="lg:min-h-full"
       >
          <HeadingsFrame>
             <SectionHeading>Get in Touch</SectionHeading>
             <SectionSubheading>Contact</SectionSubheading>
          </HeadingsFrame>
          <SectionWrapper>
+            <ContactForm />
             <ContactsWrapper>
                <Contact>
                   <IconFrame>
