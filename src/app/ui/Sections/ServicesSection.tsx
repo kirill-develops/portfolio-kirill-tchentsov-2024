@@ -55,7 +55,10 @@ function ServiceCard({ serviceObj, index }: ServiceCardProps): JSX.Element {
 
 export default function ServicesSection(): JSX.Element {
    return (
-      <SectionFrame id="services">
+      <SectionFrame
+         id="services"
+         className="lg:min-h-screen"
+      >
          <HeadingsFrame>
             <SectionHeading>What I do?</SectionHeading>
             <SectionSubheading>Services</SectionSubheading>

@@ -7,7 +7,10 @@ import {
 } from '@/app/ui/Typography';
 export default function AboutSection() {
    return (
-      <SectionFrame id="about">
+      <SectionFrame
+         id="about"
+         className="md:min-h-screen"
+      >
          <HeadingsFrame>
             <SectionHeading>About</SectionHeading>
             <SectionSubheading>Who am I?</SectionSubheading>
