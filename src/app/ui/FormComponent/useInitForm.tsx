@@ -26,7 +26,7 @@ export default function useInitForm(): ReturnProps {
       try {
          setIsSubmitting(true);
 
-         const response = await axios.post('/api/form', {});
+         const response = await axios.post('/api/form', values);
 
          if (response?.data?.success) {
             // todo handle success
