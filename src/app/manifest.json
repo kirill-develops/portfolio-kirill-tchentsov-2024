@@ -1,0 +1,36 @@
+{
+    "name": "Kirill Tchentsov | Full-Stack Developer",
+    "short_name": "KirillDevelops",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "/favicons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/favicons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "/screenshot1.png",
+            "sizes": "749x733",
+            "type": "image/png",
+            "form_factor": "wide"
+        },
+        {
+            "src": "/screenshot2.png",
+            "sizes": "502x642",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#2c98f0",
+    "background_color": "#fff",
+    "display": "standalone",
+    "lang": "en-US",
+    "orientation": "portrait",
+    "description": "A portfolio showcasing Kirill's development expertise"
+}
