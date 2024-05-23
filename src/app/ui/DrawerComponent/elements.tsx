@@ -1,7 +1,6 @@
 import { ReactChildProps } from '@/app/lib/genericTypes';
 import Link from 'next/link';
 import pageSections from '@/app/lib/pageSections';
-import useHash from './useHash';
 import { DrawerListItem } from '../Typography';
 import { useEffect, useState } from 'react';
 import useUpdateOnScroll from '@/app/hooks/useUpdateOnScroll';
@@ -18,10 +17,7 @@ interface DrawerClickProps extends ReactChildProps, ToggleDrawerProps {}
 
 const center = 'flex flex-col items-center';
 
-export function MenuIconButton({
-   children,
-   toggleDrawer,
-}: DrawerClickProps): JSX.Element {
+export function MenuIconButton({ children, toggleDrawer }: DrawerClickProps) {
    return (
       <button
          onClick={toggleDrawer}
@@ -35,13 +31,13 @@ export function MenuIconButton({
    );
 }
 
-export function Container({ children }: ReactChildProps): JSX.Element {
+export function Container({ children }: ReactChildProps) {
    return <div className="h-auto flex-1 sm:basis-1/4">{children}</div>;
 }
 
 interface WrapperProps extends ReactChildProps, OpenProps {}
 
-export function Wrapper({ children, open }: WrapperProps): JSX.Element {
+export function Wrapper({ children, open }: WrapperProps) {
    const [isLoaded, setIsLoaded] = useState(false);
    const [showDrawer, setShowDrawer] = useState(
       open ? 'animate-slideIn' : 'animate-slideOutInit',
@@ -76,7 +72,7 @@ export function Wrapper({ children, open }: WrapperProps): JSX.Element {
    );
 }
 
-export function Center({ children }: ReactChildProps): JSX.Element {
+export function Center({ children }: ReactChildProps) {
    return <div className={`${center}`}>{children}</div>;
 }
 
@@ -111,7 +107,7 @@ export function List({ toggleDrawer }: ToggleDrawerProps) {
 
 interface OverlayProps extends OpenProps, ToggleDrawerProps {}
 
-export function Overlay({ open, toggleDrawer }: OverlayProps): JSX.Element {
+export function Overlay({ open, toggleDrawer }: OverlayProps) {
    const showOverlay = open ? `block` : 'hidden';
    return (
       <div
