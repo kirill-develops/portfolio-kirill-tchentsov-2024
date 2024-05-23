@@ -35,6 +35,7 @@ export async function POST(request: Request) {
                error: 'Failed to send email',
                type: 'server',
                errorData: err,
+               user: process.env.EMAIL_USER,
             },
             { status: 500 },
          );
