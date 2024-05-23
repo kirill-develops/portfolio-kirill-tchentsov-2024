@@ -2,9 +2,12 @@
 
 # dependencies
 /node_modules
+/node_modules.nosync
 /.pnp
 .pnp.js
 .yarn/install-state.gz
+*.nosync
+.next
 
 # testing
 /coverage
