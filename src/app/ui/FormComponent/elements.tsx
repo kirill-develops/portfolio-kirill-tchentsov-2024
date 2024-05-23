@@ -20,7 +20,7 @@ export function Contact({ children }: ReactChildProps): JSX.Element {
 
 export function IconFrame({ children }: ReactChildProps): JSX.Element {
    return (
-      <div className="flex h-[100px] w-[100px] items-center justify-center bg-zinc-300">
+      <div className="flex h-[100px] min-w-[100px] items-center justify-center bg-zinc-300">
          {children}
       </div>
    );
