@@ -8,3 +8,7 @@
     text-wrap: balance;
   }
 }
+
+.card-subheading {
+  @apply font-sans text-font uppercase text-xs;
+}
