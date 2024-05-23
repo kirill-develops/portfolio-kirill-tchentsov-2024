@@ -39,6 +39,7 @@ export default function useInitForm(): ReturnProps {
             handleFormErrors(values, data?.errors, form.setError);
          } else {
             alert('Submitting form failed! Please try again');
+            console.log(error);
          }
       } finally {
          setIsSubmitting(false);
