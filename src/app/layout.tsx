@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next';
+import { ReactChildProps } from './lib/genericTypes';
 import { playfair_display, quicksand } from './ui/fonts';
 import './ui/globals.css';
-import { ReactChildProps } from './lib/genericTypes';
 
 export const metadata: Metadata = {
    title: 'Kirill Tchentsov | Full-Stack Developer',
