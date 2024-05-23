@@ -11,7 +11,7 @@ export default function StyledPolygon({
 }: StyledPolygon): JSX.Element {
    return (
       <span
-         className={`hexagonClip absolute -top-14 left-0 right-0 mx-auto flex h-28 w-24 items-center justify-center ${bgColorsArr[index]}`}
+         className={`hexagon-clip absolute -top-14 left-0 right-0 mx-auto flex h-28 w-24 items-center justify-center ${bgColorsArr[index]}`}
       >
          {children}
       </span>
