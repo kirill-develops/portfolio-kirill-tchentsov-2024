@@ -13,7 +13,6 @@ import {
    List,
    Overlay,
    MenuIconButton,
-   ListItems,
 } from '@/app/ui/DrawerComponent/elements';
 import useDrawer from '@/app/ui/DrawerComponent/useDrawer';
 import MenuLines from '@/svg/menuLines';
@@ -34,9 +33,7 @@ export default function Drawer(): JSX.Element {
                   <Drawer.Heading>Kirill Tchentsov</Drawer.Heading>
                   <Drawer.Subheading>Full-Stack Developer</Drawer.Subheading>
                </Center>
-               <Drawer.List toggleDrawer={toggleClose}>
-                  <ListItems />
-               </Drawer.List>
+               <Drawer.List toggleDrawer={toggleClose} />
                <Center>
                   <Drawer.Copyright>
                      © Copyright {currentYear} All rights reserved

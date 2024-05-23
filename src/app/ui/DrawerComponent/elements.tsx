@@ -4,6 +4,7 @@ import pageSections from '@/app/lib/pageSections';
 import useHash from './useHash';
 import { DrawerListItem } from '../Typography';
 import { useEffect, useState } from 'react';
+import useUpdateOnScroll from '@/app/hooks/useUpdateOnScroll';
 
 type OpenProps = {
    open: boolean;
@@ -79,35 +80,33 @@ export function Center({ children }: ReactChildProps): JSX.Element {
    return <div className={`${center}`}>{children}</div>;
 }
 
-export function List({
-   children,
-   toggleDrawer,
-}: DrawerClickProps): JSX.Element {
+export function List({ toggleDrawer }: ToggleDrawerProps) {
+   const { selectedId, handleLinkClick } = useUpdateOnScroll();
+
    return (
       <ul
          onClick={toggleDrawer}
          className="flex list-image-none flex-col items-center"
       >
-         {children}
+         {pageSections.map(({ title, id, url }) => {
+            const isSelected = selectedId === id;
+
+            return (
+               <DrawerListItem
+                  key={id}
+                  selected={isSelected}
+               >
+                  <Link
+                     href={url}
+                     onClick={handleLinkClick}
+                  >
+                     {title}
+                  </Link>
+               </DrawerListItem>
+            );
+         })}
       </ul>
    );
-}
-
-export function ListItems(): JSX.Element[] {
-   const hash = useHash();
-
-   return pageSections.map(({ title, url }) => {
-      const selected = hash === url.substring(1);
-
-      return (
-         <DrawerListItem
-            key={url}
-            selected={selected}
-         >
-            <Link href={url}>{title}</Link>
-         </DrawerListItem>
-      );
-   });
 }
 
 interface OverlayProps extends OpenProps, ToggleDrawerProps {}
