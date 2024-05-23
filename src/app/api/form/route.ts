@@ -29,13 +29,12 @@ export async function POST(request: Request) {
 
          return NextResponse.json({ success: true }, { status: 200 });
       } catch (err) {
-         console.log(err);
-
          return NextResponse.json(
             {
                success: false,
                error: 'Failed to send email',
                type: 'server',
+               errorData: err,
             },
             { status: 500 },
          );
