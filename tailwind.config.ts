@@ -89,11 +89,34 @@ const config: Config = {
    },
    plugins: [
       require('tailwindcss-animate'),
-      plugin(({ addUtilities }) => {
+      plugin(({ addUtilities, theme }) => {
          addUtilities({
             '.hexagon-clip': {
                'clip-path':
                   'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)',
+            },
+            '.animated-underline': {
+               position: 'relative',
+               '&::after': {
+                  content: 'var(--tw-content)',
+                  position: 'absolute',
+                  bottom: theme('spacing.1'),
+                  left: '0px',
+                  right: '0px',
+                  height: '1px',
+                  transform: 'scaleX(0)',
+                  backgroundColor: theme('colors.page.blue'),
+                  transitionDuration: '300ms',
+                  animationDuration: '300ms',
+               },
+               '&:hover::after': {
+                  transform: 'scaleX(1)',
+               },
+            },
+            '.underline-active': {
+               '&::after': {
+                  transform: 'scaleX(1)',
+               },
             },
          });
       }),

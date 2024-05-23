@@ -92,13 +92,16 @@ function DrawerListItem({
    children,
    selected = false,
 }: DrawerListItemProps): JSX.Element {
-   const hasUnderline = selected
-      ? 'underline text-page-blue'
-      : 'no-underline text-font';
+   const selectedStyles = selected
+      ? 'underline-active text-page-blue'
+      : 'text-font';
 
    return (
       <li
-         className={`font-sans text-xs/[1.8] font-medium uppercase tracking-[0.0625rem] text-font hover:text-page-blue ${hasUnderline}`}
+         className={cn(
+            'animated-underline font-sans text-xs/[1.8] font-medium uppercase tracking-[0.0625rem]  text-font ',
+            selectedStyles,
+         )}
       >
          {children}
       </li>
@@ -115,22 +118,18 @@ function DrawerCopyright({ children }: ReactChildProps): JSX.Element {
 
 interface CardHeading extends ReactChildProps {
    span?: boolean;
+   className?: string;
 }
 
-function CardHeading({ children, span }: CardHeading): JSX.Element {
+function CardHeading({ children, span, className }: CardHeading): JSX.Element {
+   const commonStyles =
+      'text-center font-sans text-base/[1.1] font-bold uppercase';
+
    if (span) {
-      return (
-         <span className="text-center font-sans text-base/[1.1] font-bold uppercase">
-            {children}
-         </span>
-      );
+      return <span className={cn(commonStyles, className)}>{children}</span>;
    }
 
-   return (
-      <h3 className="text-center font-sans text-base/[1.1] font-bold uppercase">
-         {children}
-      </h3>
-   );
+   return <h3 className={cn(commonStyles, className)}>{children}</h3>;
 }
 
 export {
