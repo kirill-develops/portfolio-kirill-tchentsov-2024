@@ -47,7 +47,7 @@ function Body({
    span,
    className,
 }: BodyProps): JSX.Element {
-   const bodyStyles = 'font-sans text-base/[1.8] md:text-[0.9375rem]';
+   const bodyStyles = 'font-sans text-base/[1.8] md:text-[0.9375rem]/[1.8]';
    const alignStyles = justify ?? 'text-justify';
    const colorStyles = black ? 'text-black' : 'text-font';
    const dynamicBodyStyles = `${bodyStyles} ${colorStyles} ${alignStyles}`;
@@ -71,7 +71,7 @@ function ListItem({ children }: ReactChildProps): JSX.Element {
 
 function DrawerHeading({ children }: ReactChildProps): JSX.Element {
    return (
-      <h3 className="font-serif font-bold leading-[1.8rem] tracking-[0.25px] text-[22]">
+      <h3 className="font-serif text-[22px] font-bold leading-[1.8] tracking-[0.25px]">
          {children}
       </h3>
    );
@@ -79,7 +79,7 @@ function DrawerHeading({ children }: ReactChildProps): JSX.Element {
 
 function DrawerSubheading({ children }: ReactChildProps): JSX.Element {
    return (
-      <h3 className="font-sans text-xs/[1.8] uppercase text-font">
+      <h3 className="font-sans text-xs/[1.8] uppercase text-font md:text-sm/[1.8] ">
          {children}
       </h3>
    );
@@ -99,7 +99,7 @@ function DrawerListItem({
    return (
       <li
          className={cn(
-            'font-sans text-xs/[1.8] font-medium uppercase tracking-[0.0625rem] text-font  animated-underline ',
+            'font-sans text-xs/[1.8] font-medium uppercase tracking-[0.0625rem] text-font animated-underline ',
             selectedStyles,
          )}
       >
