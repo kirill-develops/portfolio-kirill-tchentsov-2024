@@ -64,7 +64,7 @@ function getMailData(body: { name: string; email: string; message: string }) {
    return {
       from: { name: name },
       replyTo: email,
-      to: 'kirill.develops@gmail.com',
+      to: 'connect@kirill-develops.com',
       subject: `Portfolio Contact - Message from ${name}`,
       text: `from: ${name}\nemail: ${email}\n\nmessage:\n${message}`,
       html: `<h3>from: ${name}</h3><h3>email: ${email}</h3><h3>message:</h3><p>${message}</p>`,
