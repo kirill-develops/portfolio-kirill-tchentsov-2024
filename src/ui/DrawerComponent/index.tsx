@@ -16,6 +16,9 @@ import {
 } from '@/ui/DrawerComponent/elements';
 import useDrawer from '@/ui/DrawerComponent/useDrawer';
 import MenuLines from '@/ui/svg/menuLines';
+import LinkedinSVG from '@/svg/linkedin';
+import GithubSVG from '@/svg/github';
+import IconLink from '@/ui/components/iconLink';
 
 export default function Drawer(): JSX.Element {
    const [open, toggleOpen, toggleClose] = useDrawer();
@@ -41,6 +44,20 @@ export default function Drawer(): JSX.Element {
                   <Drawer.Copyright>Made with Next.js</Drawer.Copyright>
                   <Drawer.Copyright>Deployed on AWS</Drawer.Copyright>
                </Center>
+               <div className="flex gap-x-4">
+                  <IconLink
+                     url="https://www.linkedin.com/in/kirill-tchentsov/"
+                     label="Kirill's LinkedIn"
+                  >
+                     <LinkedinSVG className="h-7 w-7" />
+                  </IconLink>
+                  <IconLink
+                     url="https://github.com/kirill-develops"
+                     label="Kirill's GitHub"
+                  >
+                     <GithubSVG className="h-7 w-7" />
+                  </IconLink>
+               </div>
             </Wrapper>
          </Container>
          <Overlay
