@@ -13,6 +13,7 @@ import {
    List,
    Overlay,
    MenuIconButton,
+   Avatar,
 } from '@/ui/DrawerComponent/elements';
 import useDrawer from '@/ui/DrawerComponent/useDrawer';
 import MenuLines from '@/ui/svg/menuLines';
@@ -33,6 +34,7 @@ export default function Drawer(): JSX.Element {
          <Container>
             <Wrapper open={open}>
                <Center>
+                  <Avatar />
                   <Drawer.Heading>Kirill Tchentsov</Drawer.Heading>
                   <Drawer.Subheading>Full-Stack Developer</Drawer.Subheading>
                </Center>

@@ -4,6 +4,7 @@ import pageSections from '@/lib/pageSections';
 import { DrawerListItem } from '@/ui/Typography';
 import { useEffect, useState } from 'react';
 import useUpdateOnScroll from '@/hooks/useUpdateOnScroll';
+import Image from 'next/image';
 
 type OpenProps = {
    open: boolean;
@@ -113,6 +114,20 @@ export function Overlay({ open, toggleDrawer }: OverlayProps) {
       <div
          className={`fixed inset-0 z-10 h-screen overflow-auto bg-black/15 ${showOverlay}`}
          onClick={toggleDrawer}
+      />
+   );
+}
+
+export function Avatar() {
+   return (
+      <Image
+         height={100}
+         width={100}
+         quality={80}
+         priority
+         src="/img/avatar.JPG"
+         alt="Photo of Kirill"
+         className="mb-3 h-[100px] w-[100px] rounded-full object-cover"
       />
    );
 }
