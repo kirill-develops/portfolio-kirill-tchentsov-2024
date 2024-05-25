@@ -9,8 +9,8 @@ import {
    IconFrame,
    SectionWrapper,
 } from '../FormComponent/elements';
-import EnvelopeSVG from '../svg/envelope';
-import MapSVG from '../svg/map';
+import EnvelopeSVG from '@/svg/envelope';
+import MapSVG from '@/svg/map';
 
 const locations = ['Ottawa, ON', 'Toronto, ON'];
 
