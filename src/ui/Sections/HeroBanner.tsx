@@ -5,24 +5,11 @@ import { ReactChildProps } from '@/lib/genericTypes';
 import GithubSVG from '@/ui/svg/github';
 import LinkedinSVG from '@/ui/svg/linkedin';
 import DownloadSVG from '@/ui/svg/download';
+import IconLink from '@/ui/components/iconLink';
 
 interface LinkProps extends ReactChildProps {
    url: string;
    label?: string;
-}
-
-function IconLink({ children, url, label }: LinkProps): JSX.Element {
-   return (
-      <Link
-         href={url}
-         aria-label={label}
-         className="cursor-pointer text-[#666666] hover:text-page-blue"
-         target="_blank"
-         rel="noopener"
-      >
-         {children}
-      </Link>
-   );
 }
 
 function ButtonLink({ children, url }: LinkProps): JSX.Element {
