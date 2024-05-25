@@ -26,7 +26,7 @@ export function IconFrame({ children }: ReactChildProps): JSX.Element {
    );
 }
 
-const emailString = 'kirill.develops@gmail.com';
+const emailString = 'connect@kirill-develops.com';
 
 export function EmailLink(): JSX.Element {
    return (
