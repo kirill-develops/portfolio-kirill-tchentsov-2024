@@ -16,7 +16,7 @@ function ButtonLink({ children, url }: LinkProps): JSX.Element {
    return (
       <Link
          href={url}
-         className="flex w-9/12 justify-center gap-x-1 rounded px-4 py-3 font-sans text-sm font-semibold uppercase tracking-[1.25px] outline outline-2 hover:bg-drawer hover:outline-page-blue sm:w-max"
+         className="flex w-9/12 justify-center gap-x-1 rounded bg-white px-4 py-3 font-sans text-sm font-semibold uppercase tracking-[1.25px] shadow-card outline outline-2 hover:bg-drawer hover:shadow-md hover:outline-page-blue sm:w-max"
          target="_blank"
          rel="noopener"
       >
