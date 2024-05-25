@@ -1,10 +1,15 @@
-export default function LinkedinSVG(): JSX.Element {
+import { SkillIconProps } from '@/lib/genericTypes';
+import { cn } from '@/lib/utils';
+
+export default function LinkedinSVG({
+   className,
+}: SkillIconProps): JSX.Element {
    return (
       <svg
          aria-hidden="true"
          viewBox="0 0 24 24"
          xmlns="http://www.w3.org/2000/svg"
-         className="h-10 w-10"
+         className={cn('h-10 w-10', className)}
       >
          <title>LinkedIn</title>
          <path
