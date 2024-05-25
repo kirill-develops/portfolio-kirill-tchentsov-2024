@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
-import { playfair_display, quicksand } from './ui/fonts';
-import './ui/globals.css';
+import { playfair_display, quicksand } from '@/fonts';
+import '@/ui/globals.css';
 
 export const metadata: Metadata = {
    title: 'Kirill Tchentsov | Full-Stack Developer',

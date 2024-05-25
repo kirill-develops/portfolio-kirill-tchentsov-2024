@@ -1,4 +1,4 @@
-import { contactFormSchema } from '@/app/ui/FormComponent/formSchema';
+import { contactFormSchema } from '@/ui/FormComponent/formSchema';
 import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
