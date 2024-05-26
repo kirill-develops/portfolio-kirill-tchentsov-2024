@@ -127,7 +127,7 @@ export function Avatar() {
          priority
          src="/img/avatar.JPG"
          alt="Photo of Kirill"
-         className="mb-3 h-[100px] w-[100px] rounded-full object-cover"
+         className="mb-3 h-[100px] w-[100px] rounded-full object-cover ring-2 ring-white"
       />
    );
 }
