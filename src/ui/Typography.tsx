@@ -27,7 +27,7 @@ function SectionHeading({ children }: ReactChildProps): JSX.Element {
 
 function SectionSubheading({ children }: ReactChildProps): JSX.Element {
    return (
-      <h2 className="font-serif text-lg font-bold uppercase tracking-[0.3125rem]">
+      <h2 className="font-serif text-lg font-bold uppercase tracking-[0.3125rem] lg:text-2xl">
          {children}
       </h2>
    );
