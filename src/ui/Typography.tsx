@@ -17,9 +17,19 @@ function PageSubtitle({ children }: ReactChildProps): JSX.Element {
    );
 }
 
-function SectionHeading({ children }: ReactChildProps): JSX.Element {
+function SectionHeading({
+   children,
+   className,
+   ...rest
+}: ReactChildProps): JSX.Element {
    return (
-      <h2 className="font-sans font-medium uppercase tracking-[0.3125rem] text-[0.625] text-font-heading">
+      <h2
+         className={cn(
+            'font-sans font-medium uppercase tracking-[0.3125rem] text-[0.625] text-font-heading',
+            className,
+         )}
+         {...rest}
+      >
          {children}
       </h2>
    );
@@ -37,7 +47,6 @@ interface BodyProps extends ReactChildProps {
    black?: boolean;
    justify?: string;
    span?: boolean;
-   className?: string;
 }
 
 function Body({
