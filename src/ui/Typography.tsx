@@ -11,9 +11,9 @@ function PageTitle({ children }: ReactChildProps): JSX.Element {
 
 function PageSubtitle({ children }: ReactChildProps): JSX.Element {
    return (
-      <h1 className="font-sans text-xs/[1.8] font-medium uppercase tracking-[0.0625rem] text-font">
+      <h3 className="font-sans text-xs/[1.8] font-medium uppercase tracking-[0.0625rem] text-font">
          {children}
-      </h1>
+      </h3>
    );
 }
 
