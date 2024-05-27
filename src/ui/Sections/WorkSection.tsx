@@ -35,7 +35,7 @@ function WorkCard({ project }: WorkCardTypes): JSX.Element {
                alt={`${name} thumbnail`}
                width={243}
                height={193}
-               className="h-auto w-auto border shadow-card group-hover:border-page-blue group-hover:shadow-lg"
+               className="h-auto w-auto border shadow-card group-hover:border-2 group-hover:shadow-lg"
             />
             <div className="flex flex-col items-center gap-y-3">
                <div className="space-y-1 text-center">
