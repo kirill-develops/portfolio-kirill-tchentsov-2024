@@ -29,7 +29,7 @@ export default function HeroBanner(): JSX.Element {
    return (
       <SectionFrame
          id="hero"
-         className="min-h-screen snap-end items-center gap-y-7 bg-gradient-to-bl from-[#FFEFBA] sm:items-start"
+         className="min-h-screen snap-end items-center gap-y-7 bg-gradient-to-l from-[#F7F8F8] via-[#ECE9E6] to-[#fff] sm:items-start"
       >
          <div className="flex flex-col items-center gap-y-2 sm:items-start">
             <PageTitle>Full-Stack Developer</PageTitle>

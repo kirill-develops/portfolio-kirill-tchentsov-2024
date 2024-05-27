@@ -54,7 +54,10 @@ function WorkCard({ project }: WorkCardTypes): JSX.Element {
 
 export default function WorkSection(): JSX.Element {
    return (
-      <SectionFrame id="work">
+      <SectionFrame
+         id="work"
+         className="bg-gradient-to-br from-[#ECE9E6] via-[#fff] to-[#d8dbe9]"
+      >
          <HeadingsFrame>
             <SectionHeading>Experience</SectionHeading>
             <SectionSubheading>My Work</SectionSubheading>
