@@ -19,7 +19,7 @@ export default function ContactSection(): JSX.Element {
    return (
       <SectionFrame
          id="contact"
-         className="sm:min-h-full"
+         className=" sm:min-h-[80vh]"
       >
          <HeadingsFrame>
             <SectionHeading>Get in Touch</SectionHeading>
