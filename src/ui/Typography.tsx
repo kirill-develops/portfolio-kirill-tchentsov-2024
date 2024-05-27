@@ -118,7 +118,6 @@ function DrawerCopyright({ children }: ReactChildProps): JSX.Element {
 
 interface CardHeading extends ReactChildProps {
    span?: boolean;
-   className?: string;
 }
 
 function CardHeading({ children, span, className }: CardHeading): JSX.Element {
