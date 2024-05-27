@@ -27,6 +27,10 @@ const config: Config = {
                navy: '#4054B2',
                red: '#CC403F',
             },
+            favicon: {
+               primary: '#140088',
+               secondary: '#E5C454',
+            },
          },
          boxShadow: { card: '0 8px 56px -8px rgba(0, 0, 0, 0.17)' },
          fontFamily: {
