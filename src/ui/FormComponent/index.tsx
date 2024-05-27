@@ -45,6 +45,7 @@ export default function ContactForm(): JSX.Element {
                      <FormItem>
                         <FormControl>
                            <Input
+                              autoComplete={'on'}
                               placeholder={name}
                               {...field}
                            />
