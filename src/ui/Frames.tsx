@@ -45,7 +45,7 @@ function SectionFrame({ children, id, className }: SectionFrameProps) {
    return (
       <article
          className={cn(
-            'flex h-auto flex-col gap-y-16 px-4 py-20 sm:px-8 lg:px-12',
+            'flex h-auto flex-col gap-y-16 px-4 py-10 pb-20 sm:px-8 lg:px-12',
             className,
          )}
          id={id}
