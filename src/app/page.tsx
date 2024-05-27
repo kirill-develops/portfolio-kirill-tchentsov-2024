@@ -6,6 +6,7 @@ import ServicesSection from '@/ui/Sections/ServicesSection';
 import SkillsSection from '@/ui/Sections/SkillsSection';
 import ContactSection from '@/ui/Sections/ContactSection';
 import WorkSection from '@/ui/Sections/WorkSection';
+import Footer from '@/ui/Sections/Footer';
 
 export default function Home(): JSX.Element {
    return (
@@ -18,6 +19,7 @@ export default function Home(): JSX.Element {
             <SkillsSection />
             <WorkSection />
             <ContactSection />
+            <Footer />
          </MainFrame>
       </PageFrame>
    );
