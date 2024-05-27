@@ -35,11 +35,11 @@ function WorkCard({ project }: WorkCardTypes): JSX.Element {
                alt={`${name} thumbnail`}
                width={243}
                height={193}
-               className="h-auto w-auto border shadow-card group-hover:border-drawer group-hover:shadow-lg"
+               className="h-auto w-auto rounded border shadow-card group-hover:border-drawer group-hover:shadow-md group-active:shadow-sm"
             />
             <div className="flex flex-col items-center gap-y-3">
                <div className="space-y-1 text-center">
-                  <CardHeading className="group-hover:text-page-blue group-hover:underline">
+                  <CardHeading className="group-hover:text-page-blue group-hover:underline group-active:decoration-2">
                      {name}
                   </CardHeading>
                   <h4 className="card-subheading group-hover:text-page-blue">
