@@ -5,7 +5,8 @@ import ContactForm from '../FormComponent';
 import {
    Contact,
    ContactsWrapper,
-   EmailLink,
+   EmailContact,
+   EmailString,
    IconFrame,
    SectionWrapper,
 } from '../FormComponent/elements';
@@ -18,7 +19,7 @@ export default function ContactSection(): JSX.Element {
    return (
       <SectionFrame
          id="contact"
-         className="lg:min-h-full"
+         className="sm:min-h-full"
       >
          <HeadingsFrame>
             <SectionHeading>Get in Touch</SectionHeading>
@@ -27,12 +28,12 @@ export default function ContactSection(): JSX.Element {
          <SectionWrapper>
             <ContactForm />
             <ContactsWrapper>
-               <Contact>
+               <EmailContact>
                   <IconFrame>
                      <EnvelopeSVG />
                   </IconFrame>
-                  <EmailLink />
-               </Contact>
+                  <EmailString />
+               </EmailContact>
                <Contact>
                   <IconFrame>
                      <MapSVG />
