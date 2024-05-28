@@ -32,31 +32,33 @@ export default function HeroBanner(): JSX.Element {
    return (
       <SectionFrame
          id="hero"
-         className="min-h-screen snap-end items-center gap-y-7 bg-gradient-to-l from-[#F7F8F8] via-[#ECE9E6] to-[#fff] sm:items-start"
+         className="relative h-screen max-h-[70rem] min-h-[50dvh] snap-end items-center gap-y-7 p-0 sm:items-start sm:p-0 lg:p-0"
       >
-         <div className="flex flex-col items-center gap-y-2 sm:items-start">
-            <PageTitle>Full-Stack Developer</PageTitle>
-            <PageSubtitle>
-               [JavaScript | React.js | Next.js | Node.js | AWS ]
-            </PageSubtitle>
-         </div>
-         <ButtonLink url={cvLink}>
-            Download CV
-            <DownloadSVG />
-         </ButtonLink>
-         <div className="flex gap-x-6">
-            <IconLink
-               url="https://www.linkedin.com/in/kirill-tchentsov/"
-               label="Kirill's LinkedIn"
-            >
-               <LinkedinSVG />
-            </IconLink>
-            <IconLink
-               url="https://github.com/kirill-develops"
-               label="Kirill's GitHub"
-            >
-               <GithubSVG />
-            </IconLink>
+         <div className="z-[1] flex flex-col items-center gap-y-7 px-8 py-10 sm:items-start">
+            <div className="flex flex-col items-center gap-y-2 sm:items-start">
+               <PageTitle>Full-Stack Developer</PageTitle>
+               <PageSubtitle>
+                  [JavaScript | React.js | Next.js | Node.js | AWS ]
+               </PageSubtitle>
+            </div>
+            <ButtonLink url={cvLink}>
+               Download CV
+               <DownloadSVG />
+            </ButtonLink>
+            <div className="flex gap-x-6">
+               <IconLink
+                  url="https://www.linkedin.com/in/kirill-tchentsov/"
+                  label="Kirill's LinkedIn"
+               >
+                  <LinkedinSVG />
+               </IconLink>
+               <IconLink
+                  url="https://github.com/kirill-develops"
+                  label="Kirill's GitHub"
+               >
+                  <GithubSVG />
+               </IconLink>
+            </div>
          </div>
       </SectionFrame>
    );
