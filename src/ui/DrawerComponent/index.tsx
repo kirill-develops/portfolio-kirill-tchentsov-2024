@@ -8,7 +8,7 @@ import {
 } from '@/ui/Typography';
 import {
    Container,
-   Wrapper,
+   Drawer as DrawerEl,
    Center,
    List,
    Overlay,
@@ -32,9 +32,9 @@ export default function Drawer(): JSX.Element {
             <MenuLines />
          </MenuIconButton>
          <Container>
-            <Wrapper open={open}>
+            <DrawerEl open={open}>
                <Center>
-                  <Avatar />
+                  <Drawer.Avatar />
                   <Drawer.Heading>Kirill Tchentsov</Drawer.Heading>
                   <Drawer.Subheading>Full-Stack Developer</Drawer.Subheading>
                </Center>
@@ -60,7 +60,7 @@ export default function Drawer(): JSX.Element {
                      <GithubSVG className="h-7 w-7" />
                   </IconLink>
                </div>
-            </Wrapper>
+            </DrawerEl>
          </Container>
          <Overlay
             open={open}
@@ -70,6 +70,7 @@ export default function Drawer(): JSX.Element {
    );
 }
 
+Drawer.Avatar = Avatar;
 Drawer.List = List;
 Drawer.Heading = DrawerHeading;
 Drawer.Subheading = DrawerSubheading;
