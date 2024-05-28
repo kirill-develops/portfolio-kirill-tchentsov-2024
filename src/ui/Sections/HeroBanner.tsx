@@ -6,6 +6,7 @@ import GithubSVG from '@/ui/svg/github';
 import LinkedinSVG from '@/ui/svg/linkedin';
 import DownloadSVG from '@/ui/svg/download';
 import IconLink from '@/ui/components/iconLink';
+import HeroImages from '../HeroImages';
 
 const cvLink =
    'https://drive.google.com/file/d/1mfVQmMqKMkeoGup0HQkNQ0a5cDCPKZuV/view?usp=drive_link';
@@ -60,6 +61,7 @@ export default function HeroBanner(): JSX.Element {
                </IconLink>
             </div>
          </div>
+         <HeroImages />
       </SectionFrame>
    );
 }
