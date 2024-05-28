@@ -32,7 +32,10 @@ function IconWrapper({ children }: ReactChildProps) {
 
 export default function SkillsSection(): JSX.Element {
    return (
-      <SectionFrame id="skills">
+      <SectionFrame
+         id="skills"
+         className="bg-gradient-to-bl from-[#f0efe9] via-[#d0d0d0] to-[#cccbbf]"
+      >
          <HeadingsFrame>
             <SectionHeading>My Specialty</SectionHeading>
             <SectionSubheading>My Skills</SectionSubheading>
