@@ -7,6 +7,9 @@ import LinkedinSVG from '@/ui/svg/linkedin';
 import DownloadSVG from '@/ui/svg/download';
 import IconLink from '@/ui/components/iconLink';
 
+const cvLink =
+   'https://drive.google.com/file/d/1mfVQmMqKMkeoGup0HQkNQ0a5cDCPKZuV/view?usp=drive_link';
+
 interface LinkProps extends ReactChildProps {
    url: string;
    label?: string;
@@ -37,7 +40,7 @@ export default function HeroBanner(): JSX.Element {
                [JavaScript | React.js | Next.js | Node.js | AWS ]
             </PageSubtitle>
          </div>
-         <ButtonLink url="https://drive.google.com/file/d/1mfVQmMqKMkeoGup0HQkNQ0a5cDCPKZuV/view?usp=drive_link">
+         <ButtonLink url={cvLink}>
             Download CV
             <DownloadSVG />
          </ButtonLink>
