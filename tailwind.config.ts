@@ -40,6 +40,9 @@ const config: Config = {
          animation: {
             'accordion-down': 'accordion-down 0.2s ease-out',
             'accordion-up': 'accordion-up 0.2s ease-out',
+            'fade-in':
+               'fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 0.5s both',
+            'fade-out': 'fade-out 0.5s ease-out both',
             slideIn:
                'slideIn 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
             slideOut:
@@ -84,6 +87,8 @@ const config: Config = {
                from: { height: 'var(--radix-accordion-content-height)' },
                to: { height: '0' },
             },
+            'fade-in': { from: { opacity: '0' }, to: { opacity: '1' } },
+            'fade-out': { from: { opacity: '1' }, to: { opacity: '0' } },
          },
       },
    },
