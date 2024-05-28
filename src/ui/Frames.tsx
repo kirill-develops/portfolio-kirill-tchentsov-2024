@@ -32,20 +32,16 @@ function MainFrame({ children }: ReactChildProps) {
       <div
          className={`${animationClass} z-0 flex h-screen flex-col overflow-scroll scroll-smooth sm:basis-3/4 sm:animate-slideIn`}
       >
-         {children}
+         <div className="h-auto">{children}</div>
       </div>
    );
 }
 
-interface SectionFrameProps extends ReactChildProps {
-   className?: string;
-}
-
-function SectionFrame({ children, id, className }: SectionFrameProps) {
+function SectionFrame({ children, id, className }: ReactChildProps) {
    return (
       <article
          className={cn(
-            'flex h-auto flex-col gap-y-16 px-4 py-20 sm:px-8 lg:px-12',
+            'flex h-auto flex-col gap-y-16 px-4 py-10 pb-20 sm:px-8 lg:px-12',
             className,
          )}
          id={id}

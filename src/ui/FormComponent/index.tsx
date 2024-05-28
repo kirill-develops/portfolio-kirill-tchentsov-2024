@@ -14,6 +14,7 @@ import { Textarea } from '../components/textarea';
 import LoaderSVG from '../svg/loader';
 import useInitForm from './useInitForm';
 import { FormWrapper } from './elements';
+import { cn } from '@/lib/utils';
 
 const inputFormFields: { id: 'name' | 'email'; name: string }[] = [
    { id: 'name', name: 'Name' },
@@ -45,6 +46,7 @@ export default function ContactForm(): JSX.Element {
                      <FormItem>
                         <FormControl>
                            <Input
+                              autoComplete={'on'}
                               placeholder={name}
                               {...field}
                            />
@@ -71,7 +73,10 @@ export default function ContactForm(): JSX.Element {
             />
             <Button
                type="submit"
-               className={isSubmitting ? 'justify-start' : 'justify-center'}
+               className={cn(
+                  'self-end',
+                  isSubmitting ? 'justify-start' : 'justify-center',
+               )}
                disabled={isSubmitting}
             >
                {buttonText(isSubmitting)}
