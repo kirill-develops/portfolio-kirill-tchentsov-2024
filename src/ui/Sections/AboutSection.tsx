@@ -9,7 +9,7 @@ export default function AboutSection() {
    return (
       <SectionFrame
          id="about"
-         className="md:min-h-screen"
+         className="bg-gradient-to-br from-[#F7F8F8] via-[#f0efed] to-[#fff] md:h-screen md:max-h-[60rem] md:min-h-[50dvh]"
       >
          <HeadingsFrame>
             <SectionHeading>About</SectionHeading>

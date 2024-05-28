@@ -11,15 +11,25 @@ function PageTitle({ children }: ReactChildProps): JSX.Element {
 
 function PageSubtitle({ children }: ReactChildProps): JSX.Element {
    return (
-      <h1 className="font-sans text-xs/[1.8] font-medium uppercase tracking-[0.0625rem] text-font">
+      <h3 className="font-sans text-xs/[1.8] font-medium uppercase tracking-[0.0625rem] text-font">
          {children}
-      </h1>
+      </h3>
    );
 }
 
-function SectionHeading({ children }: ReactChildProps): JSX.Element {
+function SectionHeading({
+   children,
+   className,
+   ...rest
+}: ReactChildProps): JSX.Element {
    return (
-      <h2 className="font-sans font-medium uppercase tracking-[0.3125rem] text-[0.625] text-font-heading">
+      <h2
+         className={cn(
+            'font-sans font-medium uppercase tracking-[0.3125rem] text-[0.625] text-font-heading',
+            className,
+         )}
+         {...rest}
+      >
          {children}
       </h2>
    );
@@ -27,7 +37,7 @@ function SectionHeading({ children }: ReactChildProps): JSX.Element {
 
 function SectionSubheading({ children }: ReactChildProps): JSX.Element {
    return (
-      <h2 className="font-serif text-lg font-bold uppercase tracking-[0.3125rem]">
+      <h2 className="font-serif text-lg font-bold uppercase tracking-[0.3125rem] lg:text-2xl">
          {children}
       </h2>
    );
@@ -37,7 +47,6 @@ interface BodyProps extends ReactChildProps {
    black?: boolean;
    justify?: string;
    span?: boolean;
-   className?: string;
 }
 
 function Body({
@@ -118,7 +127,6 @@ function DrawerCopyright({ children }: ReactChildProps): JSX.Element {
 
 interface CardHeading extends ReactChildProps {
    span?: boolean;
-   className?: string;
 }
 
 function CardHeading({ children, span, className }: CardHeading): JSX.Element {

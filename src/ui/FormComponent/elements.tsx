@@ -1,10 +1,11 @@
 import { ReactChildProps } from '@/lib/genericTypes';
 import Link from 'next/link';
 import React from 'react';
+import { Body } from '../Typography';
 
 export function SectionWrapper({ children }: ReactChildProps): JSX.Element {
    return (
-      <div className="flex flex-col gap-y-14 md:gap-y-20 lg:flex-row-reverse lg:gap-x-20">
+      <div className="flex flex-col gap-y-14 md:gap-y-20 lg:flex-row-reverse">
          {children}
       </div>
    );
@@ -14,8 +15,19 @@ export function ContactsWrapper({ children }: ReactChildProps): JSX.Element {
    return <div className="flex flex-[0.75] flex-col gap-y-7">{children}</div>;
 }
 
-export function Contact({ children }: ReactChildProps): JSX.Element {
-   return <div className="flex flex-row items-center gap-x-5">{children}</div>;
+interface ContactProps extends ReactChildProps {
+   as?: React.ElementType;
+}
+
+export function Contact({
+   children,
+   as: Component = 'div',
+}: ContactProps): JSX.Element {
+   return (
+      <Component className="flex flex-row items-center gap-x-5">
+         {children}
+      </Component>
+   );
 }
 
 export function IconFrame({ children }: ReactChildProps): JSX.Element {
@@ -28,16 +40,24 @@ export function IconFrame({ children }: ReactChildProps): JSX.Element {
 
 const emailString = 'connect@kirill-develops.com';
 
-export function EmailLink(): JSX.Element {
+export function EmailContact({ children }: ReactChildProps) {
    return (
       <Link
          href={`mailto:${emailString}`}
          target="_blank"
          rel="noopener"
-         className=" font-sans text-base/[1.8] text-page-blue md:text-[0.9375rem]"
+         className="group flex w-fit flex-row items-center gap-x-5"
       >
-         {emailString}
+         {children}
       </Link>
+   );
+}
+
+export function EmailString(): JSX.Element {
+   return (
+      <Body className="font-sans text-base/[1.8] text-page-blue animated-underline group-hover:underline-active md:text-[0.9375rem]">
+         {emailString}
+      </Body>
    );
 }
 
@@ -50,7 +70,7 @@ interface FormWrapperProps extends ReactChildProps {
 export function FormWrapper({ children, onSubmit }: FormWrapperProps) {
    return (
       <form
-         className="flex flex-1 flex-col gap-y-5"
+         className="flex flex-[0.75] flex-col gap-y-5"
          onSubmit={onSubmit}
       >
          {children}

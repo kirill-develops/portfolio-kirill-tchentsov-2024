@@ -36,9 +36,9 @@ export function Container({ children }: ReactChildProps) {
    return <div className="h-auto flex-1 sm:basis-1/4">{children}</div>;
 }
 
-interface WrapperProps extends ReactChildProps, OpenProps {}
+interface DrawerProps extends ReactChildProps, OpenProps {}
 
-export function Wrapper({ children, open }: WrapperProps) {
+export function Drawer({ children, open }: DrawerProps) {
    const [isLoaded, setIsLoaded] = useState(false);
    const [showDrawer, setShowDrawer] = useState(
       open ? 'animate-slideIn' : 'animate-slideOutInit',
@@ -127,7 +127,7 @@ export function Avatar() {
          priority
          src="/img/avatar.JPG"
          alt="Photo of Kirill"
-         className="mb-3 h-[100px] w-[100px] rounded-full object-cover"
+         className="mb-3 h-[100px] w-[100px] rounded-full object-cover ring-2 ring-white"
       />
    );
 }

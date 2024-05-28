@@ -57,7 +57,7 @@ export default function ServicesSection(): JSX.Element {
    return (
       <SectionFrame
          id="services"
-         className="bg-gradient-to-tl from-[#ece9e6] lg:min-h-screen"
+         className="bg-gradient-to-tl from-[#F7F8F8] via-[#fff] to-[#ece9e6] lg:h-screen lg:max-h-[60rem] lg:min-h-[50dvh]"
       >
          <HeadingsFrame>
             <SectionHeading>What I do?</SectionHeading>
